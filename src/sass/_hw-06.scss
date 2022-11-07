@@ -11,3 +11,14 @@
   overflow: hidden;
   box-shadow: 10px 10px 5px 0px rgba(31, 57, 61, 0.582);
 }
+#validation-input {
+  border: 2px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}

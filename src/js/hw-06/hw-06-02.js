@@ -15,4 +15,4 @@ ingredients.map(ingredient => {
   items.push(item);
   //   list.append(item); // add item to DOM on each iteration of .map() method
 });
-list.append(...items); // add items to DOM in one action
+list.append(...items); // add items to DOM in one action.

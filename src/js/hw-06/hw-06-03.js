@@ -18,6 +18,7 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
 const gallery = document.querySelector('.gallery');
 
 gallery.insertAdjacentHTML(

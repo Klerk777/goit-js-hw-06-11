@@ -1,0 +1,2 @@
+!function(){var e={decrementBtn:document.querySelector('[data-action="decrement"]'),incrementBtn:document.querySelector('[data-action="increment"]'),value:document.querySelector("#value")},n=0,t=function(){return e.value.textContent=n};e.decrementBtn.addEventListener("click",(function(){n-=1,t()})),e.incrementBtn.addEventListener("click",(function(){n+=1,t()}))}();
+//# sourceMappingURL=hw-06-04.4c61b95e.js.map

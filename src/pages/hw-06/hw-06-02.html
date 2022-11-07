@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <link rel="shortcut icon" href="../../images/favicon-book.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../sass/index.scss" />
+  </head>
+  <body>
+    <h2>Завдання 2</h2>
+    <div class="task-conditions-box">
+      <p>
+        HTML містить порожній список
+        <code>ul#ingredients</code>
+        .
+      </p>
+      <div
+        class="language-html codeBlockContainer_Ckt0 theme-code-block"
+        style="--prism-color: #393a34; --prism-background-color: #f6f8fa"
+      >
+        <div class="codeBlockContent_biex">
+          <pre
+            tabindex="0"
+            class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+          ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token tag punctuation" style="color: rgb(57, 58, 52);">&lt;</span><span class="token tag" style="color: rgb(0, 0, 159);">ul</span><span class="token tag" style="color: rgb(0, 0, 159);"> </span><span class="token tag attr-name" style="color: rgb(0, 164, 219);">id</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(57, 58, 52);">=</span><span class="token tag attr-value punctuation" style="color: rgb(57, 58, 52);">"</span><span class="token tag attr-value" style="color: rgb(227, 17, 108);">ingredients</span><span class="token tag attr-value punctuation" style="color: rgb(57, 58, 52);">"</span><span class="token tag punctuation" style="color: rgb(57, 58, 52);">&gt;</span><span class="token tag punctuation" style="color: rgb(57, 58, 52);">&lt;/</span><span class="token tag" style="color: rgb(0, 0, 159);">ul</span><span class="token tag punctuation" style="color: rgb(57, 58, 52);">&gt;</span><br></span></code></pre>
+          <div class="buttonGroup__atx"></div>
+        </div>
+      </div>
+      <p>JavaScript містить масив рядків.</p>
+      <div
+        class="language-js codeBlockContainer_Ckt0 theme-code-block"
+        style="--prism-color: #393a34; --prism-background-color: #f6f8fa"
+      >
+        <div class="codeBlockContent_biex">
+          <pre
+            tabindex="0"
+            class="prism-code language-js codeBlock_bY9V thin-scrollbar"
+          ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token keyword" style="color: rgb(0, 0, 159);">const</span><span class="token plain"> ingredients </span><span class="token operator" style="color: rgb(57, 58, 52);">=</span><span class="token plain"> </span><span class="token punctuation" style="color: rgb(57, 58, 52);">[</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">  </span><span class="token string" style="color: rgb(227, 17, 108);">"Potatoes"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">  </span><span class="token string" style="color: rgb(227, 17, 108);">"Mushrooms"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">  </span><span class="token string" style="color: rgb(227, 17, 108);">"Garlic"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">  </span><span class="token string" style="color: rgb(227, 17, 108);">"Tomatos"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">  </span><span class="token string" style="color: rgb(227, 17, 108);">"Herbs"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">  </span><span class="token string" style="color: rgb(227, 17, 108);">"Condiments"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain"></span><span class="token punctuation" style="color: rgb(57, 58, 52);">]</span><span class="token punctuation" style="color: rgb(57, 58, 52);">;</span><br></span></code></pre>
+          <div class="buttonGroup__atx"></div>
+        </div>
+      </div>
+      <p>
+        Напиши скрипт, який для кожного елемента масиву
+        <code>ingredients</code>
+        :
+      </p>
+      <ol>
+        <li>
+          Створить окремий елемент
+          <code>&lt;li&gt;</code>
+          . Обов'язково використовуй метод
+          <code>document.createElement()</code>
+          .
+        </li>
+        <li>Додасть назву інгредієнта як його текстовий вміст.</li>
+        <li>
+          Додасть елементу клас
+          <code>item</code>
+          .
+        </li>
+        <li>
+          Після чого, вставить усі
+          <code>&lt;li&gt;</code>
+          за одну операцію у список
+          <code>ul#ingredients</code>
+          .
+        </li>
+      </ol>
+    </div>
+
+    <ul id="ingredients"></ul>
+
+    <script type="module" src="../../../js/hw-06/hw-06-02.js"></script>
+  </body>
+</html>

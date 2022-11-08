@@ -1,5 +1,21 @@
+.hw-title {
+  font-size: 28px;
+}
+.title-link-box {
+  display: flex;
+  align-items: center;
+  & h2 {
+    margin-right: 100px;
+  }
+  & a {
+    font-size: 18px;
+  }
+}
 .task-conditions-box {
   margin: 20px;
   padding: 12px;
   background-color: aliceblue;
+}
+.hw-task-list {
+  font-size: 18px;
 }

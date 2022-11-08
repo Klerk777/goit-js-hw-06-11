@@ -12,6 +12,7 @@
   overflow: hidden;
   box-shadow: 10px 10px 5px 0px rgba(31, 57, 61, 0.582);
 }
+
 // ----------------------------------  task 6
 #validation-input {
   border: 2px solid #bdbdbd;
@@ -41,4 +42,33 @@
   width: 100%;
   padding: 4px;
   font: inherit;
+}
+
+// --------------------------------  task 9
+.widget {
+  text-align: center;
+}
+
+.widget p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 48px;
+}
+
+.widget span {
+  font-family: monospace;
+}
+
+.widget button {
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+// --------------------------------  task 10
+#boxes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 4px;
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+    <link rel="shortcut icon" href="../../images/favicon-book.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../sass/index.scss" />
+  </head>
+  <body>
+    <h2>Завдання 8</h2>
+    <div class="task-conditions-box">
+      <p>Напиши скрипт управління формою логіна.</p>
+      <ol>
+        <li>
+          Обробка відправлення форми
+          <code>form.login-form</code>
+          повинна відбуватися відповідно до події
+          <code>submit</code>
+          .
+        </li>
+        <li>Під час відправлення форми сторінка не повинна перезавантажуватися.</li>
+        <li>
+          Якщо у формі є незаповнені поля, виводь
+          <code>alert</code>
+          з попередженням про те, що всі поля повинні бути заповнені.
+        </li>
+        <li>
+          Якщо користувач заповнив усі поля і відправив форму, збери значення полів в об'єкт, де ім'я поля буде ім'ям
+          властивості, а значення поля - значенням властивості.
+          <br />
+          Для доступу до елементів форми використовуй властивість
+          <code>elements</code>
+          .
+        </li>
+        <li>
+          Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом
+          <code>reset</code>
+          .
+        </li>
+      </ol>
+    </div>
+
+    <form class="login-form">
+      <label>
+        Email
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" />
+      </label>
+      <button type="submit">Login</button>
+    </form>
+
+    <script type="module" src="../../js/hw-06/hw-06-08.js"></script>
+  </body>
+</html>

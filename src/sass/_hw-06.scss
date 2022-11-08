@@ -1,3 +1,4 @@
+// ----------------------------------  task 3
 .gallery {
   display: flex;
   flex-direction: column;
@@ -11,6 +12,7 @@
   overflow: hidden;
   box-shadow: 10px 10px 5px 0px rgba(31, 57, 61, 0.582);
 }
+// ----------------------------------  task 6
 #validation-input {
   border: 2px solid #bdbdbd;
 }
@@ -21,4 +23,22 @@
 
 #validation-input.invalid {
   border-color: #f44336;
+
+  // --------------------------------  task 8
+}
+.login-form {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 16px;
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  padding: 4px;
+  font: inherit;
 }

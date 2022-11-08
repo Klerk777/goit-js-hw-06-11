@@ -23,7 +23,7 @@ form.addEventListener('submit', e => {
   if (form.elements.email.value === '' || form.elements.password.value === '') {
     alert('Всі поля форми повинні бути заповнені!');
   } else {
-    console.log(getDataObj());
+    console.table(getDataObj());
     form.reset();
   }
 });

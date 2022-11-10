@@ -9,6 +9,6 @@
 
 const input = document.querySelector('#validation-input');
 input.addEventListener('blur', () => {
-  const isValid = input.textLength === Number(input.getAttribute('data-length'));
+  const isValid = input.value.length === Number(input.getAttribute('data-length'));
   input.classList = isValid ? 'valid' : 'invalid';
 });

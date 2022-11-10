@@ -16,4 +16,7 @@ button.addEventListener('click', () => {
   const newColor = getRandomHexColor();
   document.body.style.backgroundColor = newColor;
   color.textContent = newColor;
+  // add color inversion for text
+  color.parentElement.style.color = newColor;
+  color.parentElement.style.filter = 'invert(1)';
 });

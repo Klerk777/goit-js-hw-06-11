@@ -12,7 +12,7 @@
 // функцію getRandomHexColor для отримання кольору.
 
 // Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
-
+import { isEmpty } from 'lodash';
 const refs = {
   input: document.querySelector('#controls').firstElementChild,
   createBtn: document.querySelector('[data-create]'),
@@ -33,7 +33,7 @@ function getRandomHexColor() {
 
 const createBoxes = amount => {
   amount = refs.input.value;
-  let boxSide = refs.divBox.lastElementChild === null ? 30 : parseInt(refs.divBox.lastElementChild.style.width) + 10;
+  let boxSide = isEmpty(refs.divBox.children) ? 30 : parseInt(refs.divBox.lastElementChild.style.width) + 10;
   for (let i = 0; i < amount; i++) {
     const newDiv = document.createElement('div');
     newDiv.style.backgroundColor = getRandomHexColor();
@@ -50,3 +50,9 @@ const destroyBoxes = () => {
 
 refs.createBtn.addEventListener('click', () => createBoxes());
 refs.destroyBtn.addEventListener('click', () => destroyBoxes());
+
+const clickMe = document.querySelector('#clickme');
+function multiple(a, b) {
+  console.log(a * b);
+}
+clickMe.addEventListener('click', () => multiple(3, 7));

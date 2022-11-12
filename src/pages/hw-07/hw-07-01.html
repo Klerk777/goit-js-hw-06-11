@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <link rel="shortcut icon" href="../../images/favicon-book.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../sass/index.scss" />
+  </head>
+  <body>
+    <div class="title-link-box">
+      <h2>Завдання 1. Галерея-зображень</h2>
+      <a href="./hw-07.html">Повернутись до списку завдань</a>
+    </div>
+    <div class="task-conditions-box">
+      <p>
+        Створи галерею з можливістю кліку по її елементах і перегляду повнорозмірного зображення у модальному вікні.
+        Подивися демо відео роботи галереї.
+      </p>
+      <p>Розбий завдання на декілька підзавдань:</p>
+      <ol>
+        <li>
+          Створення і рендер розмітки на підставі масиву даних
+          <code>galleryItems</code>
+          і наданого шаблону елемента галереї.
+        </li>
+        <li>
+          Реалізація делегування на
+          <code>div.gallery</code>
+          і отримання
+          <code>url</code>
+          великого зображення.
+        </li>
+        <li>
+          Підключення скрипту і стилів бібліотеки модального вікна
+          <a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">basicLightbox</a>
+          . Використовуй
+          <a
+            href="https://www.jsdelivr.com/package/npm/basiclightbox?path=dist"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CDN сервіс jsdelivr
+          </a>
+          і додай у проект посилання на мініфіковані (
+          <code>.min</code>
+          ) файли бібліотеки.
+        </li>
+        <li>
+          Відкриття модального вікна по кліку на елементі галереї. Для цього ознайомся з
+          <a href="https://github.com/electerious/basicLightbox#readme" target="_blank" rel="noopener noreferrer">
+            документацією
+          </a>
+          і
+          <a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">прикладами</a>
+          .
+        </li>
+        <li>
+          Заміна значення атрибута
+          <code>src</code>
+          елемента
+          <code>&lt;img&gt;</code>
+          в модальному вікні перед відкриттям. Використовуй готову розмітку модального вікна із зображенням з прикладів
+          бібліотеки
+          <a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">basicLightbox</a>
+          .
+        </li>
+      </ol>
+      <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="розмітка-елемента-галереї">
+        Розмітка елемента галереї
+        <a class="hash-link" href="#розмітка-елемента-галереї" title="Direct link to heading">​</a>
+      </h3>
+      <p>
+        Посилання на оригінальне зображення повинно зберігатися в data-атрибуті
+        <code>source</code>
+        на елементі
+        <code>&lt;img&gt;</code>
+        , і вказуватися в
+        <code>href</code>
+        посилання. Не додавай інші HTML теги або CSS класи, крім тих, що містяться в цьому шаблоні.
+      </p>
+      <details>
+        <summary>Розгорнути</summary>
+        <div
+          class="language-html codeBlockContainer_Ckt0 theme-code-block"
+          style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+        >
+          <div class="codeBlockContent_biex">
+            <pre
+              tabindex="0"
+              class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+            ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">gallery__item</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">a</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">gallery__link</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">href</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">large-image.jpg</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">img</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">      </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">gallery__image</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">      </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">src</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">small-image.jpg</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">      </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">data-source</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">large-image.jpg</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">      </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">alt</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">Image description</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">a</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+          </div>
+        </div>
+      </details>
+      <p>
+        Зверни увагу на те, що зображення обгорнуте посиланням, отже по кліку за замовчуванням користувач буде
+        перенаправлений на іншу сторінку. Заборони цю поведінку за замовчуванням.
+      </p>
+      <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="закриття-з-клавіатури">
+        Закриття з клавіатури
+        <a class="hash-link" href="#закриття-з-клавіатури" title="Direct link to heading">​</a>
+      </h3>
+      <p>
+        Додай закриття модального вікна після натискання клавіші
+        <code>Escape.</code>
+        Зроби так, щоб прослуховування клавіатури було тільки доти, доки відкрите модальне вікно. Бібліотека
+        <a href="https://basiclightbox.electerious.com/" target="_blank" rel="noopener noreferrer">basicLightbox</a>
+        містить метод для програмного закриття модального вікна.
+      </p>
+    </div>
+
+    <!-- Add gallery items to this list -->
+    <div class="gallery"></div>
+
+    <script type="module" src="../../js/hw-07/hw-07-01.js"></script>
+  </body>
+</html>

@@ -50,6 +50,7 @@ function render() {
 //---------------------------- function createModal -----------------------------------------
 function createModal(e) {
   // create an instance of basicLightbox and set the target src and alt for modal <img>
+  // add handler on modal show/close method
   modal = basicLightbox.create(
     `
     <img class="lightboxImg" src="${e.target.dataset.source}" alt="${e.target.alt}">`,
@@ -78,7 +79,7 @@ function onEscPress(evt) {
   modal.close(); // close modal by Esc key
 }
 
-gallery.addEventListener('click', onGalleryItemClick);
+gallery.addEventListener('click', onGalleryItemClick); // add in-gallery click listner
 
 //run
 render();

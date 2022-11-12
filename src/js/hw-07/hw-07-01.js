@@ -54,7 +54,7 @@ function createModal(e) {
     `
     <img class="lightboxImg" src="${e.target.dataset.source}" alt="${e.target.alt}">`,
     {
-      omShow: () => {
+      onShow: () => {
         document.addEventListener('keydown', onEscPress); // add eventListner when modal is open
       },
       onClose: () => {

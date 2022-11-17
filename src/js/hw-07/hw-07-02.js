@@ -15,8 +15,8 @@
 //    Нехай підпис буде знизу і з'являється через 250 мілісекунд після відкриття зображення.
 
 import galleryItems from './galleryItems'; // import data
+// @ts-ignore
 import SimpleLightbox from 'simplelightbox'; // import library
-import 'simplelightbox/dist/simple-lightbox.css'; // import style
 
 //---------------------------- get refs on gallery -----------------------------------
 const gallery = document.querySelector('.gallery');

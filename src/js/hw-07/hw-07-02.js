@@ -34,7 +34,6 @@ function getGalleryItemsTamplate(data) {
 function render() {
   gallery.innerHTML = getGalleryItemsTamplate(galleryItems);
 }
-
 render();
 
 //---------------------------- create an instance of SimpleLightbox ----------------------------------------------------

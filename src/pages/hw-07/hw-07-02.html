@@ -10,12 +10,69 @@
   </head>
   <body>
     <div class="title-link-box">
-      <h2>Завдання 2</h2>
+      <h2>Завдання 2. Бібліотека SimpleLightbox</h2>
       <a href="./hw-07.html">Повернутись до списку завдань</a>
     </div>
-    <div class="task-conditions-box"></div>
+
+    <div class="task-conditions-box">
+      <p>
+        Зроби таку саму галерею як в першому завданні, але використовуючи бібліотеку
+        <a href="https://simplelightbox.com/" target="_blank" rel="noopener noreferrer">SimpleLightbox</a>
+        , яка візьме на себе обробку кліків по зображеннях, відкриття і закриття модального вікна, а також гортання
+        зображень за допомогою клавіатури.
+      </p>
+      <p>Необхідно трохи змінити розмітку картки галереї, використовуй цей шаблон.</p>
+      <details>
+        <summary>Розгорнути</summary>
+        <div
+          class="language-html codeBlockContainer_Ckt0 theme-code-block"
+          style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+        >
+          <div class="codeBlockContent_biex">
+            <pre
+              tabindex="0"
+              class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+            ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">a</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">gallery__item</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">href</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">large-image.jpg</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">img</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">gallery__image</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">src</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">small-image.jpg</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">alt</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">Image description</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">a</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+            <div class="buttonGroup__atx"></div>
+          </div>
+        </div>
+      </details>
+      <p>Розбий це завдання на декілька підзавдань:</p>
+      <ol>
+        <li>
+          Створення і рендер розмітки на підставі масиву даних
+          <code>galleryItems</code>
+          і наданого шаблону елемента галереї. Використовуй готовий код з першого завдання.
+        </li>
+        <li>
+          Підключення скрипту і стилів бібліотеки, використовуючи
+          <a href="https://cdnjs.com/libraries/simplelightbox" target="_blank" rel="noopener noreferrer">
+            CDN сервіс cdnjs
+          </a>
+          . Необхідно додати посилання на два файли:
+          <code>simple-lightbox.min.js</code>
+          і
+          <code>simple-lightbox.min.css</code>
+          .
+        </li>
+        <li>
+          Ініціалізація бібліотеки після створення і додання елементів галереї у
+          <code>div.gallery</code>
+          . Для цього ознайомся з документацією
+          <a href="https://simplelightbox.com/" target="_blank" rel="noopener noreferrer">SimpleLightbox</a>
+          - насамперед секції «Usage» і «Markup».
+        </li>
+        <li>
+          Подивися в документації секцію «Options» і додай відображення підписів до зображень з атрибута
+          <code>alt</code>
+          . Нехай підпис буде знизу і з'являється через 250 мілісекунд після відкриття зображення.
+        </li>
+      </ol>
+    </div>
+
+    <!-- Add gallery items to this list -->
+    <ul class="gallery"></ul>
 
     <script type="module" src="../../js/hw-07/hw-07-02.js"></script>
   </body>
 </html>
-<div>Hello</div>

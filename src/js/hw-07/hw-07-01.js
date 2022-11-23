@@ -21,7 +21,7 @@
 // Додай закриття модального вікна після натискання клавіші Escape. Зроби так, щоб прослуховування клавіатури було
 // тільки доти, доки відкрите модальне вікно.Бібліотека basicLightbox містить метод для програмного закриття модального вікна.
 
-import galleryItems from './galleryItems'; // import data
+import galleryItems from '../../data/galleryItems.json'; // import data
 import * as basicLightbox from 'basiclightbox'; // import basicLightbox
 
 //---------------------------- initializing var for basicLightbox instance -----------------------------------

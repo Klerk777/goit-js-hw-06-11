@@ -14,27 +14,15 @@
 // 4. Подивися в документації секцію «Options» і додай відображення підписів до зображень з атрибута alt.
 //    Нехай підпис буде знизу і з'являється через 250 мілісекунд після відкриття зображення.
 
-import galleryItems from './galleryItems'; // import data
-// @ts-ignore
+import galleryItemsTamplate from '../../templates/galleryItemsTamplate.hbs'; // import handlebars template (.hbs)
+import galleryItems from '../../data/galleryItems.json'; // import data
 import SimpleLightbox from 'simplelightbox'; // import library
 
 //---------------------------- get refs on gallery -----------------------------------
 const gallery = document.querySelector('.gallery');
-//---------------------------- function getGalleryItemsTamplate ---------------------------------------------
-function getGalleryItemsTamplate(data) {
-  return data
-    .map(item => {
-      return `<a class="gallery__item" href="${item.original}">
-     <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
-   </a>`;
-    })
-    .join('');
-}
-//---------------------------- function render ----------------------------------------------------
-function render() {
-  gallery.innerHTML = getGalleryItemsTamplate(galleryItems);
-}
-render();
+
+//---------------------------- insert template in DOM from .hbs-template ----------------------------------------------------
+gallery.innerHTML = galleryItemsTamplate(galleryItems);
 
 //---------------------------- create an instance of SimpleLightbox ----------------------------------------------------
 new SimpleLightbox('.gallery a', {

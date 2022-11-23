@@ -20,15 +20,16 @@
   "dependencies": {
     "@swc/helpers": "^0.4.13",
     "basiclightbox": "^5.0.4",
+    "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
     "simplelightbox": "^2.10.4"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-sass": "^2.8.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
+    "parcel-transformer-hbs": "^1.0.4",
     "posthtml-include": "^1.7.4"
   }
 }
-

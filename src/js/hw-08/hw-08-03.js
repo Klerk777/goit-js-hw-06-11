@@ -24,9 +24,19 @@ function onInputHandler() {
 
 function onSubmitHandler(e) {
   e.preventDefault();
-  const submitData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+  if (!e.target.email.value || !e.target.message.value) {
+    alert('Please, complete both fields');
+    return;
+  }
+
+  const submitData = {
+    email: e.target.email.value,
+    message: e.target.message.value,
+  };
+
   console.log('Submit form!');
   console.table(submitData);
+
   e.currentTarget.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
 }

@@ -28,16 +28,11 @@ function onSubmitHandler(e) {
     alert('Please, complete both fields');
     return;
   }
-
-  const submitData = {
-    email: e.target.email.value,
-    message: e.target.message.value,
-  };
-
+  const submitData = Object.fromEntries(new FormData(e.target));
   console.log('Submit form!');
   console.table(submitData);
 
-  e.currentTarget.reset();
+  e.target.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
 }
 

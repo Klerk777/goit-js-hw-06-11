@@ -14,6 +14,8 @@ const refs = {
 };
 
 let selectedDate = null;
+let intervalID = null;
+
 const nullTime = {
   days: '00',
   hours: '00',

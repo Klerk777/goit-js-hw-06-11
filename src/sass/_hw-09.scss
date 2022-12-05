@@ -1,0 +1,53 @@
+.button-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.timer-box {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+  align-items: center;
+
+  & button {
+    height: 35px;
+    width: 80px;
+    border-radius: 6px;
+    margin-left: 8px;
+    cursor: pointer;
+    background-color: rgb(181, 255, 181);
+
+    box-shadow: 4px 4px 8px -2px rgba(0, 0, 0, 0.5);
+    &:disabled {
+      background-color: rgba(202, 202, 202, 0.733);
+      cursor: not-allowed;
+    }
+  }
+}
+
+#datetime-picker {
+  height: 35px;
+  border-radius: 6px;
+
+  box-shadow: 4px 4px 8px -2px rgba(0, 0, 0, 0.5);
+}
+
+.timer {
+  display: flex;
+  gap: 40px;
+  font-size: large;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & .value {
+    font-size: 60px;
+  }
+}

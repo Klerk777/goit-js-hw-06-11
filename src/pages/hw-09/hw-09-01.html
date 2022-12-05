@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <link rel="shortcut icon" href="../../images/favicon-book.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../sass/index.scss" />
+  </head>
+  <body>
+    <div class="title-link-box">
+      <h2>Завдання 1. Перемикач кольорів</h2>
+      <a href="./hw-09.html">Повернутись до списку завдань</a>
+    </div>
+
+    <div class="task-conditions-box">
+      <p>HTML містить кнопки «Start» і «Stop».</p>
+      <details>
+        <summary>Розгорнути</summary>
+        <div
+          class="language-html codeBlockContainer_Ckt0 theme-code-block"
+          style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+        >
+          <div class="codeBlockContent_biex">
+            <pre
+              tabindex="0"
+              class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+            ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">type</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">button</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">data-start</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Start</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">type</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">button</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">data-stop</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Stop</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+          </div>
+        </div>
+      </details>
+      <p>
+        Напиши скрипт, який після натискання кнопки «Start», раз на секунду змінює колір фону
+        <code>&lt;body&gt;</code>
+        на випадкове значення, використовуючи інлайн стиль. Натисканням на кнопку «Stop» зміна кольору фону повинна
+        зупинятися.
+      </p>
+      <p>
+        Враховуй, що на кнопку «Start» можна натиснути нескінченну кількість разів. Зроби так, щоб доки зміна теми
+        запущена, кнопка «Start» була неактивною (disabled).
+      </p>
+      <p>
+        Для генерування випадкового кольору використовуй функцію
+        <code>getRandomHexColor</code>
+        .
+      </p>
+    </div>
+
+    <div class="button-box">
+      <button type="button" data-start>Start</button>
+      <button type="button" data-stop>Stop</button>
+    </div>
+
+    <script type="module" src="../../js/hw-09/hw-09-01.js"></script>
+  </body>
+</html>

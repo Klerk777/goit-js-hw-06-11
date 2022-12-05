@@ -20,8 +20,8 @@ function saveCurrentTime(e) {
 }
 
 player.on('timeupdate', _.throttle(saveCurrentTime, 1000));
-
-player.setCurrentTime(localStorage.getItem(LOCALSTORAGE_KEY) ? localStorage.getItem(LOCALSTORAGE_KEY) : 0);
+const savedCurrentTime = localStorage.getItem(LOCALSTORAGE_KEY);
+player.setCurrentTime(savedCurrentTime ? savedCurrentTime : 0);
 
 // player.on('pause', function (e) {
 //   console.log('paused! ', e.seconds);

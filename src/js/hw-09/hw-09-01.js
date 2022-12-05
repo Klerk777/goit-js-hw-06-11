@@ -10,12 +10,12 @@ function changeColor() {
 function onStartBtn() {
   changeColor();
   intervalID = setInterval(changeColor, 1000);
-  startBtn.setAttribute('disabled', 'true');
+  startBtn.disabled = true;
 }
 
 function onStopBtn() {
   clearInterval(intervalID);
-  startBtn.removeAttribute('disabled');
+  startBtn.disabled = false;
 }
 
 startBtn.addEventListener('click', onStartBtn);

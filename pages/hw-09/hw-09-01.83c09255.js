@@ -1,0 +1,2 @@
+const t=document.querySelector("[data-start]"),e=document.querySelector("[data-stop]");function r(){document.body.style.backgroundColor=`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`}t.addEventListener("click",(function(){r(),intervalID=setInterval(r,1e3),t.setAttribute("disabled","true")})),e.addEventListener("click",(function(){clearInterval(intervalID),t.removeAttribute("disabled")}));
+//# sourceMappingURL=hw-09-01.83c09255.js.map

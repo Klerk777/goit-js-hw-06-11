@@ -55,6 +55,7 @@ function getTimeLeft() {
 }
 
 function onStartBtn() {
+  render(getTimeLeft());
   Notify.success(`Timer was started!`);
   refs.startBtn.disabled = true;
   refs.resetBtn.disabled = false;

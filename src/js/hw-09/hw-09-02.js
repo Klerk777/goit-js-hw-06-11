@@ -11,6 +11,7 @@ const refs = {
   hours: document.querySelector('[data-hours]'),
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
+  audio: document.querySelector('.audio'),
 };
 
 let selectedDate = null;
@@ -64,7 +65,18 @@ function onStartBtn() {
     if (selectedDate - new Date() < 1000) {
       clearInterval(intervalID);
       refs.resetBtn.disabled = true;
-      Report.success('The appointed time has come');
+      Report.success('The time is up!');
+
+      const promise = refs.audio.play();
+      promise
+        .then(() => {
+          refs.audio.volume = 1;
+          console.log('audio plaing');
+        })
+        .catch(error => {
+          console.log(`Catch error:  ${error}`);
+        });
+
       return;
     }
   }, 1000);

@@ -65,7 +65,7 @@ function onStartBtn() {
     if (selectedDate - new Date() < 1000) {
       clearInterval(intervalID);
       refs.resetBtn.disabled = true;
-      Report.success('The time is up!');
+      Report.warning('The time is up!', 'Lights out soon!');
 
       const promise = refs.audio.play();
       promise

@@ -14,6 +14,7 @@ const refs = {
   audio: document.querySelector('.audio'),
   volume: document.querySelector('.volume-control'),
   volumeIndicator: document.querySelector('.volume-value'),
+  volumIcon: document.querySelector('.volume-icon'),
 };
 
 const LOCALSTORAGE_VOLUME_KEY = 'volume-level';
@@ -111,6 +112,20 @@ function setVolumeLevel() {
   refs.audio.volume = selectedVolumeLevel ? selectedVolumeLevel : 0.5;
   refs.volume.value = refs.audio.volume * 10;
   refs.volumeIndicator.textContent = refs.volume.value;
+  if (refs.volume.value == 0) {
+    refs.volumIcon.classList.add('mute');
+  } else {
+    refs.volumIcon.classList.remove('mute');
+  }
+}
+
+function onVolumeIconClick() {
+  refs.volumIcon.classList.toggle('mute');
+  refs.audio.volume = refs.volumIcon.classList.contains('mute') ? 0 : localStorage.getItem(LOCALSTORAGE_VOLUME_KEY);
+  refs.volume.value = refs.audio.volume * 10;
+  refs.volumeIndicator.textContent = refs.volume.value;
+
+  console.log(refs.audio.volume);
 }
 
 function run() {
@@ -121,5 +136,6 @@ function run() {
 refs.startBtn.addEventListener('click', onStartBtn);
 refs.resetBtn.addEventListener('click', onResetBtn);
 refs.volume.addEventListener('input', onVolumeChange);
+refs.volumIcon.addEventListener('click', onVolumeIconClick);
 
 run();

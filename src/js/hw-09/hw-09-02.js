@@ -12,8 +12,11 @@ const refs = {
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
   audio: document.querySelector('.audio'),
+  volume: document.querySelector('.volume-control'),
+  volumeIndicator: document.querySelector('.volume-value'),
 };
 
+LOCALSTORAGE_VOLUME_KEY = 'volume-level';
 let selectedDate = null;
 let intervalID = null;
 
@@ -63,6 +66,7 @@ function onStartBtn() {
   intervalID = setInterval(() => {
     render(getTimeLeft());
     if (selectedDate - new Date() < 1000) {
+      render(nullTime);
       clearInterval(intervalID);
       refs.resetBtn.disabled = true;
       Report.warning('The time is up!', 'Lights out soon!');
@@ -70,8 +74,8 @@ function onStartBtn() {
       const promise = refs.audio.play();
       promise
         .then(() => {
-          refs.audio.volume = 1;
           console.log('audio plaing');
+          console.log('volume level: ', refs.audio.volume);
         })
         .catch(error => {
           console.log(`Catch error:  ${error}`);
@@ -97,5 +101,25 @@ function render(date) {
   refs.seconds.textContent = seconds;
 }
 
+function onVolumeChange(e) {
+  localStorage.setItem(LOCALSTORAGE_VOLUME_KEY, e.target.value / 10);
+  setVolumeLevel();
+}
+
+function setVolumeLevel() {
+  const selectedVolumeLevel = localStorage.getItem(LOCALSTORAGE_VOLUME_KEY);
+  refs.audio.volume = selectedVolumeLevel ? selectedVolumeLevel : 0.5;
+  refs.volume.value = refs.audio.volume * 10;
+  refs.volumeIndicator.textContent = refs.volume.value;
+}
+
+function run() {
+  render(nullTime);
+  setVolumeLevel();
+}
+
 refs.startBtn.addEventListener('click', onStartBtn);
 refs.resetBtn.addEventListener('click', onResetBtn);
+refs.volume.addEventListener('input', onVolumeChange);
+
+run();

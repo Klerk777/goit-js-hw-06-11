@@ -24,19 +24,6 @@
   &:hover .volume-value {
     opacity: 1;
   }
-
-  // &::before {
-  //   content: '';
-  //   margin-left: 14px;
-  //   width: 24px;
-  //   height: 24px;
-  //   background-image: url('../images/volume-medium.svg');
-  //   background-size: contain;
-  //   fill: #184075;
-  // }
-  // &.mute::before {
-  //   background-image: url('../images/volume-mute2.svg');
-  // }
 }
 .volume-icon {
   margin-left: 14px;

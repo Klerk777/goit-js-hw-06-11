@@ -16,7 +16,7 @@ const refs = {
   volumeIndicator: document.querySelector('.volume-value'),
 };
 
-LOCALSTORAGE_VOLUME_KEY = 'volume-level';
+const LOCALSTORAGE_VOLUME_KEY = 'volume-level';
 let selectedDate = null;
 let intervalID = null;
 

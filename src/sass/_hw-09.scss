@@ -37,6 +37,7 @@
 }
 
 .volume-control {
+  padding: 0;
   width: 70px;
   &:focus ~ .volume-value {
     opacity: 1;

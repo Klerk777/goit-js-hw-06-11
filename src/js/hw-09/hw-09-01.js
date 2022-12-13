@@ -1,5 +1,5 @@
 import getRandomHexColor from '../common-fn/getRandomHexColor';
-
+let intervalID;
 const startBtn = document.querySelector('[data-start]');
 const stopBtn = document.querySelector('[data-stop]');
 
@@ -14,8 +14,10 @@ function onStartBtn() {
 }
 
 function onStopBtn() {
-  clearInterval(intervalID);
-  startBtn.disabled = false;
+  if (intervalID) {
+    clearInterval(intervalID);
+    startBtn.disabled = false;
+  }
 }
 
 startBtn.addEventListener('click', onStartBtn);

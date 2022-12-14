@@ -1,4 +1,4 @@
-import galleryItemsTamplate from '../../templates/galleryItemsTamplate.hbs'; // import handlebars template (.hbs)
+import galleryItemsTamplate from '../../templates/galleryItemsTemplate.hbs'; // import handlebars template (.hbs)
 import galleryItems from '../../data/galleryItems.json'; // import data
 import SimpleLightbox from 'simplelightbox'; // import library
 

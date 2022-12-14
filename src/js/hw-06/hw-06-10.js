@@ -26,11 +26,6 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-// function randomColor() {
-//   var color = '#' + Math.random().toString(16).slice(3, 9);
-//   return color;
-// }
-
 const createBoxes = amount => {
   amount = refs.input.value;
   let boxSide = isEmpty(refs.divBox.children) ? 30 : parseInt(refs.divBox.lastElementChild.style.width) + 10;
@@ -50,9 +45,3 @@ const destroyBoxes = () => {
 
 refs.createBtn.addEventListener('click', () => createBoxes());
 refs.destroyBtn.addEventListener('click', () => destroyBoxes());
-
-const clickMe = document.querySelector('#clickme');
-function multiple(a, b) {
-  console.log(a * b);
-}
-clickMe.addEventListener('click', () => multiple(3, 7));

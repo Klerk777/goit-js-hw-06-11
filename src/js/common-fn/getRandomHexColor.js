@@ -3,3 +3,8 @@ export default function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+// function randomColor() {
+//   var color = '#' + Math.random().toString(16).slice(3, 9);
+//   return color;
+// }

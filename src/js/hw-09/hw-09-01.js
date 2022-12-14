@@ -1,5 +1,5 @@
 import getRandomHexColor from '../common-fn/getRandomHexColor';
-let intervalID;
+let intervalID = null;
 const startBtn = document.querySelector('[data-start]');
 const stopBtn = document.querySelector('[data-stop]');
 

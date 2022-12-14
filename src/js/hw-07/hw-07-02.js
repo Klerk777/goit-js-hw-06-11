@@ -14,7 +14,7 @@
 // 4. Подивися в документації секцію «Options» і додай відображення підписів до зображень з атрибута alt.
 //    Нехай підпис буде знизу і з'являється через 250 мілісекунд після відкриття зображення.
 
-import galleryItemsTamplate from '../../templates/galleryItemsTamplate.hbs'; // import handlebars template (.hbs)
+import galleryItemsTamplate from '../../templates/galleryItemsTemplate.hbs'; // import handlebars template (.hbs)
 import galleryItems from '../../data/galleryItems.json'; // import data
 import SimpleLightbox from 'simplelightbox'; // import library
 

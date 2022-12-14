@@ -7,3 +7,34 @@
   max-width: 320px;
   margin-bottom: 16px;
 }
+.country-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 10px;
+  list-style: none;
+
+  & img {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  & .country-item {
+    display: flex;
+  }
+}
+
+.country-name-box {
+  padding-left: 8px;
+  & h1 {
+    margin: 10px 0;
+  }
+}
+.info-list {
+  padding-left: 10px;
+  list-style: none;
+}
+.info-item {
+}
+.info-title {
+  font-weight: bold;
+}

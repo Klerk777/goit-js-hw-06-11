@@ -4,7 +4,7 @@ const REQUEST_OPTIONS_URL = '?fields=name,capital,population,flags,languages,cur
 export function fetchCountries(name) {
   return fetch(`${REQUEST_BASE_URL}${name}${REQUEST_OPTIONS_URL}`).then(response => {
     if (response.status === 404) {
-      return Promise.reject(new Error('Error 404. Not found.'));
+      return Promise.reject(new Error('404.'));
     } else {
       return response.json();
     }

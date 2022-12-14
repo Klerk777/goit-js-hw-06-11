@@ -31,11 +31,7 @@
       <span class='info-title'>
         Currencies:
       </span>{{#each currencies}}
-        {{#if @last}}
-          {{this.name}} ({{this.symbol}})
-        {{else}}
-          {{this.name}},
-        {{/if}}
+        {{this.name}} ({{this.symbol}})
       {{/each}}
     </li>
     <li class='info-item'>
@@ -43,33 +39,3 @@
     </li>
   </ul>
 {{/each}}
-
-{{! Array [ {…} ]
-​
-0: Object { flags: {…}, name: {…}, population: 38005238, … }
-​​
-    altSpellings: Array [ "CA" ]
-    ​​
-    capital: Array [ "Ottawa" ]
-    ​​
-    currencies: Object { CAD: {…} }
-    ​​
-    flags: Object { png: "https://flagcdn.com/w320/ca.png", svg: "https://flagcdn.com/ca.svg" }
-    ​​
-    languages: Object { eng: "English", fra: "French" }
-    ​​​
-        eng: "English"
-        ​​​
-        fra: "French"
-    ​​​
-    <prototype>: Object { … }
-    ​​
-    name: Object { common: "Canada", official: "Canada", nativeName: {…} }
-    ​​
-    population: 38005238
-    ​​
-    <prototype>: Object { … }
-​
-length: 1
-​
-<prototype>: Array [] }}

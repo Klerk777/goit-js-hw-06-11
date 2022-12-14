@@ -17,6 +17,7 @@ function clearDOM() {
 }
 
 function render(data) {
+  console.log(data);
   clearDOM();
   if (data.length > 10) {
     Notify.info('Too many matches found. Please enter a more specific name.');
@@ -35,11 +36,12 @@ function onInputHandler(e) {
       .then(render)
       .catch(error => {
         clearDOM();
-        Notify.failure('Oops, there is no country with that name');
-        console.log(error);
+        Notify.failure(`Oops, there is no country with that name. ${error}`);
       });
   } else {
     clearDOM();
   }
 }
 refs.input.addEventListener('input', _.debounce(onInputHandler, DEBOUNCE_DELAY));
+
+//TODO: Add option to open country info by click on country in countries list

@@ -17,9 +17,11 @@
   & img {
     display: inline-block;
     margin-right: 14px;
+    cursor: pointer;
   }
   & .country-item {
-    display: flex;
+    display: inline-flex;
+    cursor: pointer;
   }
 }
 

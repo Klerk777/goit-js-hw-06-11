@@ -3,8 +3,8 @@ const REQUEST_OPTIONS_URL = '?fields=name,capital,population,flags,languages,cur
 
 export function fetchCountries(name) {
   return fetch(`${REQUEST_BASE_URL}${name}${REQUEST_OPTIONS_URL}`).then(response => {
-    if (response.status === 404) {
-      return Promise.reject(new Error('404.'));
+    if (!response.ok) {
+      return Promise.reject(new Error(`${response.status}. ${response.statusText}`));
     } else {
       return response.json();
     }

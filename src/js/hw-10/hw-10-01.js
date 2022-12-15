@@ -42,6 +42,20 @@ function onInputHandler(e) {
     clearDOM();
   }
 }
-refs.input.addEventListener('input', _.debounce(onInputHandler, DEBOUNCE_DELAY));
 
-//TODO: Add option to open country info by click on country in countries list
+function onCountryClickHandler(e) {
+  if (e.target.nodeName === 'UL') {
+    return;
+  } else {
+    const targetCountry = e.target.closest('.country-item').querySelector('.contry-name').textContent.trim();
+    fetchCountries(targetCountry)
+      .then(render)
+      .catch(error => {
+        clearDOM();
+        Notify.failure(`${error}`);
+      });
+  }
+}
+
+refs.input.addEventListener('input', _.debounce(onInputHandler, DEBOUNCE_DELAY));
+refs.list.addEventListener('click', onCountryClickHandler);

@@ -4,3 +4,4 @@
 - Homework 07 - https://klerk777.github.io/goit-js-hw-06-11/pages/hw-07/hw-07.html 
 - Homework 08 - https://klerk777.github.io/goit-js-hw-06-11/pages/hw-08/hw-08.html 
 - Homework 09 - https://klerk777.github.io/goit-js-hw-06-11/pages/hw-09/hw-09.html 
+- Homework 10 - https://klerk777.github.io/goit-js-hw-06-11/pages/hw-10/hw-10.html 

@@ -2,6 +2,7 @@
 //     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 #search-box {
+  display: block;
   font: inherit;
   padding: 8px;
   max-width: 320px;
@@ -20,7 +21,6 @@
     cursor: pointer;
   }
   & .country-item {
-    display: inline-flex;
     cursor: pointer;
   }
 }

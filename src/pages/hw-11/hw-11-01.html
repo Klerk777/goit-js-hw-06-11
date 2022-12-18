@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <link rel="shortcut icon" href="../../images/favicon-book.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../sass/index.scss" />
+  </head>
+  <body>
+    <div class="title-link-box">
+      <h2>Завдання 1. Пошук зображень.</h2>
+      <a href="./hw-11.html">Повернутись до списку завдань</a>
+    </div>
+
+    <div class="task-conditions-box">
+      <p>
+        Створи фронтенд частину застосунку пошуку і перегляду зображень за ключовим словом. Додай оформлення елементів
+        інтерфейсу.
+      </p>
+      <details>
+        <summary>Переглянути умови завдання</summary>
+        <div class="theme-doc-markdown markdown">
+          <header><h1>Критерії приймання</h1></header>
+          <ul>
+            <li>
+              Створено репозиторій
+              <code>goit-js-hw-11</code>
+              .
+            </li>
+            <li>
+              Домашня робота містить два посилання: на вихідні файли і робочу сторінку на
+              <code>GitHub Pages</code>
+              .
+            </li>
+            <li>В консолі відсутні помилки і попередження під час відкриття живої сторінки завдання.</li>
+            <li>
+              Проект зібраний за допомогою
+              <a
+                href="https://github.com/goitacademy/parcel-project-template"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                parcel-project-template
+              </a>
+              .
+            </li>
+            <li>
+              Для HTTP-запитів використана бібліотека
+              <a href="https://axios-http.com/" target="_blank" rel="noopener noreferrer">axios</a>
+              .
+            </li>
+            <li>
+              Використовується синтаксис
+              <code>async/await</code>
+              .
+            </li>
+            <li>
+              Для повідомлень використана бібліотека
+              <a href="https://github.com/notiflix/Notiflix#readme" target="_blank" rel="noopener noreferrer">
+                notiflix
+              </a>
+              .
+            </li>
+            <li>
+              Код відформатований за допомогою
+              <code>Prettier</code>
+              .
+            </li>
+          </ul>
+          <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="завдання---пошук-зображень">
+            Завдання - пошук зображень
+            <a class="hash-link" href="#завдання---пошук-зображень" title="Direct link to heading">​</a>
+          </h2>
+          <p>
+            Створи фронтенд частину застосунку пошуку і перегляду зображень за ключовим словом. Додай оформлення
+            елементів інтерфейсу. Подивись демо-відео роботи застосунку.
+          </p>
+          <div style="margin-bottom: 20px; width: 640px; height: 360px">
+            <video
+              src="https://user-images.githubusercontent.com/17479434/125040406-49a6f600-e0a0-11eb-975d-e7d8eaf2af6b.mp4"
+              style="width: 100%; height: 100%"
+              preload="auto"
+              controls=""
+            ></video>
+          </div>
+          <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="форма-пошуку">
+            Форма пошуку
+            <a class="hash-link" href="#форма-пошуку" title="Direct link to heading">​</a>
+          </h2>
+          <p>
+            Форма спочатку міститья в HTML документі. Користувач буде вводити рядок для пошуку у текстове поле, а по
+            сабміту форми необхідно виконувати HTTP-запит.
+          </p>
+          <div
+            class="language-html codeBlockContainer_Ckt0 theme-code-block"
+            style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+          >
+            <div class="codeBlockContent_biex">
+              <pre
+                tabindex="0"
+                class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+              ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">form</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">search-form</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">id</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">search-form</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">input</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">    </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">type</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">text</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">    </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">name</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">searchQuery</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">    </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">autocomplete</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">off</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">    </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">placeholder</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">Search images...</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag" style="color: rgb(255, 121, 198);">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">type</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">submit</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Search</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">form</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+          <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="http-запити">
+            HTTP-запити
+            <a class="hash-link" href="#http-запити" title="Direct link to heading">​</a>
+          </h2>
+          <p>
+            Для бекенду використовуй публічний API сервісу
+            <a href="https://pixabay.com/api/docs/" target="_blank" rel="noopener noreferrer">Pixabay</a>
+            . Зареєструйся, отримай свій унікальний ключ доступу і ознайомся з документацією.
+          </p>
+          <p>Список параметрів рядка запиту, які тобі обов'язково необхідно вказати:</p>
+          <ul>
+            <li>
+              <code>key</code>
+              - твій унікальний ключ доступу до API.
+            </li>
+            <li>
+              <code>q</code>
+              - термін для пошуку. Те, що буде вводити користувач.
+            </li>
+            <li>
+              <code>image_type</code>
+              - тип зображення. На потрібні тільки фотографії, тому постав значення
+              <code>photo</code>
+              .
+            </li>
+            <li>
+              <code>orientation</code>
+              - орієнтація фотографії. Постав значення
+              <code>horizontal</code>
+              .
+            </li>
+            <li>
+              <code>safesearch</code>
+              - фільтр за віком. Постав значення
+              <code>true</code>
+              .
+            </li>
+          </ul>
+          <p>
+            У відповіді буде масив зображень, що задовольнили критерії параметрів запиту. Кожне зображення описується
+            об'єктом, з якого тобі цікаві тільки наступні властивості:
+          </p>
+          <ul>
+            <li>
+              <code>webformatURL</code>
+              - посилання на маленьке зображення для списку карток.
+            </li>
+            <li>
+              <code>largeImageURL</code>
+              - посилання на велике зображення.
+            </li>
+            <li>
+              <code>tags</code>
+              - рядок з описом зображення. Підійде для атрибуту
+              <code>alt</code>
+              .
+            </li>
+            <li>
+              <code>likes</code>
+              - кількість лайків.
+            </li>
+            <li>
+              <code>views</code>
+              - кількість переглядів.
+            </li>
+            <li>
+              <code>comments</code>
+              - кількість коментарів.
+            </li>
+            <li>
+              <code>downloads</code>
+              - кількість завантажень.
+            </li>
+          </ul>
+          <p>
+            Якщо бекенд повертає порожній масив, значить нічого підходящого не було знайдено. У такому разі показуй
+            повідомлення з текстом
+            <code>"Sorry, there are no images matching your search query. Please try again."</code>
+            . Для повідомлень використовуй бібліотеку
+            <a href="https://github.com/notiflix/Notiflix#readme" target="_blank" rel="noopener noreferrer">notiflix</a>
+            .
+          </p>
+          <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="галерея-і-картка-зображення">
+            Галерея і картка зображення
+            <a class="hash-link" href="#галерея-і-картка-зображення" title="Direct link to heading">​</a>
+          </h2>
+          <p>
+            Елемент
+            <code>div.gallery</code>
+            спочатку міститься в HTML документі, і в нього необхідно рендерити розмітку карток зображень. Під час пошуку
+            за новим ключовим словом необхідно повністю очищати вміст галереї, щоб не змішувати результати.
+          </p>
+          <div
+            class="language-html codeBlockContainer_Ckt0 theme-code-block"
+            style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+          >
+            <div class="codeBlockContent_biex">
+              <pre
+                tabindex="0"
+                class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+              ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">gallery</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token comment" style="color: rgb(98, 114, 164);">&lt;!-- Картки зображень --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+          <p>Шаблон розмітки картки одного зображення для галереї.</p>
+          <div
+            class="language-html codeBlockContainer_Ckt0 theme-code-block"
+            style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+          >
+            <div class="codeBlockContent_biex">
+              <pre
+                tabindex="0"
+                class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+              ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">photo-card</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">img</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">src</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">alt</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">loading</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">lazy</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">info</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">info-item</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">      </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Likes</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">info-item</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">      </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Views</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">info-item</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">      </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Comments</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">info-item</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">      </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Downloads</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">b</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">    </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">p</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">div</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+          <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="пагінація">
+            Пагінація
+            <a class="hash-link" href="#пагінація" title="Direct link to heading">​</a>
+          </h2>
+          <p>
+            Pixabay API підтримує пагінацію і надає параметри
+            <code>page</code>
+            і
+            <code>per_page</code>
+            . Зроби так, щоб в кожній відповіді приходило 40 об'єктів (за замовчуванням 20).
+          </p>
+          <ul>
+            <li>
+              Початкове значення параметра
+              <code>page</code>
+              повинно бути
+              <code>1</code>
+              .
+            </li>
+            <li>
+              З кожним наступним запитом, його необхідно збільшити на
+              <code>1</code>
+              .
+            </li>
+            <li>
+              У разі пошуку за новим ключовим словом, значення
+              <code>page</code>
+              потрібно повернути до початкового, оскільки буде пагінація по новій колекції зображень.
+            </li>
+          </ul>
+          <p>
+            HTML документ вже містить розмітку кнопки, по кліку на яку, необхідно виконувати запит за наступною групою
+            зображень і додавати розмітку до вже існуючих елементів галереї.
+          </p>
+          <div
+            class="language-html codeBlockContainer_Ckt0 theme-code-block"
+            style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+          >
+            <div class="codeBlockContent_biex">
+              <pre
+                tabindex="0"
+                class="prism-code language-html codeBlock_bY9V thin-scrollbar"
+              ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">type</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">button</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag" style="color: rgb(255, 121, 198);"> </span><span class="token tag attr-name" style="color: rgb(241, 250, 140);">class</span><span class="token tag attr-value punctuation attr-equals" style="color: rgb(248, 248, 242);">=</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag attr-value" style="color: rgb(255, 121, 198);">load-more</span><span class="token tag attr-value punctuation" style="color: rgb(248, 248, 242);">"</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><span class="token plain">Load more</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&lt;/</span><span class="token tag" style="color: rgb(255, 121, 198);">button</span><span class="token tag punctuation" style="color: rgb(248, 248, 242);">&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+          <ul>
+            <li>В початковому стані кнопка повинна бути прихована.</li>
+            <li>Після першого запиту кнопка з'являється в інтерфейсі під галереєю.</li>
+            <li>При повторному сабміті форми кнопка спочатку ховається, а після запиту знову відображається.</li>
+          </ul>
+          <p>
+            У відповіді бекенд повертає властивість
+            <code>totalHits</code>
+            - загальна кількість зображень, які відповідають критерію пошуку (для безкоштовного акаунту). Якщо
+            користувач дійшов до кінця колекції, ховай кнопку і виводь повідомлення з текстом
+            <code>"We're sorry, but you've reached the end of search results."</code>
+            .
+          </p>
+          <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="додатково">
+            Додатково
+            <a class="hash-link" href="#додатково" title="Direct link to heading">​</a>
+          </h2>
+          <div class="theme-admonition theme-admonition-caution alert alert--warning admonition_LlT9">
+            <div class="admonitionHeading_tbUL">Увага ⚠️</div>
+            <div class="admonitionContent_S0QG">
+              <p>Наступний функціонал не обов'язковий для здавання завдання, але буде хорошою додатковою практикою.</p>
+            </div>
+          </div>
+          <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="повідомлення">
+            Повідомлення
+            <a class="hash-link" href="#повідомлення" title="Direct link to heading">​</a>
+          </h3>
+          <p>
+            Після першого запиту з кожним новим пошуком отримувати повідомлення, в якому буде написано, скільки всього
+            знайшли зображень (властивість
+            <code>totalHits</code>
+            ). Текст повідомлення -
+            <code>"Hooray! We found totalHits images."</code>
+          </p>
+          <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="бібліотека-simplelightbox">
+            Бібліотека
+            <code>SimpleLightbox</code>
+            <a class="hash-link" href="#бібліотека-simplelightbox" title="Direct link to heading">​</a>
+          </h3>
+          <p>
+            Додати відображення великої версії зображення з бібліотекою
+            <a href="https://simplelightbox.com/" target="_blank" rel="noopener noreferrer">SimpleLightbox</a>
+            для повноцінної галереї.
+          </p>
+          <ul>
+            <li>
+              У розмітці необхідно буде обгорнути кожну картку зображення у посилання, як зазначено в документації.
+            </li>
+            <li>
+              Бібліотека містить метод
+              <code>refresh()</code>
+              , який обов'язково потрібно викликати щоразу після додавання нової групи карток зображень.
+            </li>
+          </ul>
+          <p>
+            Для того щоб підключити CSS код бібліотеки в проект, необхідно додати ще один імпорт, крім того, що описаний
+            в документації.
+          </p>
+          <div
+            class="language-js codeBlockContainer_Ckt0 theme-code-block"
+            style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+          >
+            <div class="codeBlockContent_biex">
+              <pre
+                tabindex="0"
+                class="prism-code language-js codeBlock_bY9V thin-scrollbar"
+              ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token comment" style="color: rgb(98, 114, 164);">// Описаний в документації</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token keyword module" style="color: rgb(189, 147, 249); font-style: italic;">import</span><span class="token plain"> </span><span class="token imports maybe-class-name">SimpleLightbox</span><span class="token plain"> </span><span class="token keyword module" style="color: rgb(189, 147, 249); font-style: italic;">from</span><span class="token plain"> </span><span class="token string" style="color: rgb(255, 121, 198);">"simplelightbox"</span><span class="token punctuation" style="color: rgb(248, 248, 242);">;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token comment" style="color: rgb(98, 114, 164);">// Додатковий імпорт стилів</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token keyword module" style="color: rgb(189, 147, 249); font-style: italic;">import</span><span class="token plain"> </span><span class="token string" style="color: rgb(255, 121, 198);">"simplelightbox/dist/simple-lightbox.min.css"</span><span class="token punctuation" style="color: rgb(248, 248, 242);">;</span><br></span></code></pre>
+            </div>
+          </div>
+          <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="прокручування-сторінки">
+            Прокручування сторінки
+            <a class="hash-link" href="#прокручування-сторінки" title="Direct link to heading">​</a>
+          </h3>
+          <p>
+            Зробити плавне прокручування сторінки після запиту і відтворення кожної наступної групи зображень. Ось тобі
+            код-підказка, але розберися у ньому самостійно.
+          </p>
+          <div
+            class="language-js codeBlockContainer_Ckt0 theme-code-block"
+            style="--prism-color: #f8f8f2; --prism-background-color: #282a36"
+          >
+            <div class="codeBlockContent_biex">
+              <pre
+                tabindex="0"
+                class="prism-code language-js codeBlock_bY9V thin-scrollbar"
+              ><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token keyword" style="color: rgb(189, 147, 249); font-style: italic;">const</span><span class="token plain"> </span><span class="token punctuation" style="color: rgb(248, 248, 242);">{</span><span class="token plain"> </span><span class="token literal-property property">height</span><span class="token operator">:</span><span class="token plain"> cardHeight </span><span class="token punctuation" style="color: rgb(248, 248, 242);">}</span><span class="token plain"> </span><span class="token operator">=</span><span class="token plain"> </span><span class="token dom variable" style="color: rgb(189, 147, 249); font-style: italic;">document</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token punctuation" style="color: rgb(248, 248, 242);">.</span><span class="token method function property-access" style="color: rgb(80, 250, 123);">querySelector</span><span class="token punctuation" style="color: rgb(248, 248, 242);">(</span><span class="token string" style="color: rgb(255, 121, 198);">".gallery"</span><span class="token punctuation" style="color: rgb(248, 248, 242);">)</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token punctuation" style="color: rgb(248, 248, 242);">.</span><span class="token property-access">firstElementChild</span><span class="token punctuation" style="color: rgb(248, 248, 242);">.</span><span class="token method function property-access" style="color: rgb(80, 250, 123);">getBoundingClientRect</span><span class="token punctuation" style="color: rgb(248, 248, 242);">(</span><span class="token punctuation" style="color: rgb(248, 248, 242);">)</span><span class="token punctuation" style="color: rgb(248, 248, 242);">;</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain" style="display: inline-block;"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token dom variable" style="color: rgb(189, 147, 249); font-style: italic;">window</span><span class="token punctuation" style="color: rgb(248, 248, 242);">.</span><span class="token method function property-access" style="color: rgb(80, 250, 123);">scrollBy</span><span class="token punctuation" style="color: rgb(248, 248, 242);">(</span><span class="token punctuation" style="color: rgb(248, 248, 242);">{</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token literal-property property">top</span><span class="token operator">:</span><span class="token plain"> cardHeight </span><span class="token operator">*</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color: rgb(248, 248, 242);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">  </span><span class="token literal-property property">behavior</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(255, 121, 198);">"smooth"</span><span class="token punctuation" style="color: rgb(248, 248, 242);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token punctuation" style="color: rgb(248, 248, 242);">}</span><span class="token punctuation" style="color: rgb(248, 248, 242);">)</span><span class="token punctuation" style="color: rgb(248, 248, 242);">;</span><br></span></code></pre>
+            </div>
+          </div>
+          <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="нескінченний-скрол">
+            Нескінченний скрол
+            <a class="hash-link" href="#нескінченний-скрол" title="Direct link to heading">​</a>
+          </h3>
+          <p>
+            Замість кнопки «Load more», можна зробити нескінченне завантаження зображень під час прокручування сторінки.
+            Ми надаємо тобі повну свободу дій в реалізації, можеш використовувати будь-які бібліотеки.
+          </p>
+        </div>
+      </details>
+    </div>
+    <div class="form-container">
+      <form class="search-form" id="search-form">
+        <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="gallery">
+      <!-- Картки зображень -->
+    </div>
+
+    <button type="button" class="load-more">Load more</button>
+
+    <script type="module" src="../../js/hw-11/hw-11-01.js"></script>
+  </body>
+</html>
